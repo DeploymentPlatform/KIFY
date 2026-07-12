@@ -354,6 +354,12 @@ button, input, select, textarea {
   font-weight: 500;
 }
 
+@media (max-width: 767px) {
+  .top-bar {
+    display: none;
+  }
+}
+
 .top-bar-inner {
   display: flex;
   justify-content: space-between;
@@ -437,6 +443,12 @@ button, input, select, textarea {
   aspect-ratio: 16 / 9;
   width: 160px; /* recommended size */
   max-height: 90px;
+}
+
+@media (max-width: 767px) {
+  .logo-container {
+    width: 120px;
+  }
 }
 
 .logo-container img {

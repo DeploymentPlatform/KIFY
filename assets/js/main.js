@@ -46,22 +46,30 @@ const SITE_CONFIG = {
 function injectConfigData() {
   // Injects values like phone numbers, emails, addresses into marked elements to ensure single-source-of-truth updates.
   document.querySelectorAll("[data-config-phone]").forEach(el => {
-    el.innerText = SITE_CONFIG.primaryPhoneDisplay;
+    if (el.children.length === 0) {
+      el.innerText = SITE_CONFIG.primaryPhoneDisplay;
+    }
     if (el.tagName === "A") el.href = `tel:${SITE_CONFIG.primaryPhoneLink}`;
   });
 
   document.querySelectorAll("[data-config-dental-phone]").forEach(el => {
-    el.innerText = SITE_CONFIG.dentalPhoneDisplay;
+    if (el.children.length === 0) {
+      el.innerText = SITE_CONFIG.dentalPhoneDisplay;
+    }
     if (el.tagName === "A") el.href = `tel:${SITE_CONFIG.dentalPhoneLink}`;
   });
 
   document.querySelectorAll("[data-config-email]").forEach(el => {
-    el.innerText = SITE_CONFIG.email;
+    if (el.children.length === 0) {
+      el.innerText = SITE_CONFIG.email;
+    }
     if (el.tagName === "A") el.href = `mailto:${SITE_CONFIG.email}`;
   });
 
   document.querySelectorAll("[data-config-address]").forEach(el => {
-    el.innerText = `${SITE_CONFIG.address.line1}, ${SITE_CONFIG.address.line2}, ${SITE_CONFIG.address.city}`;
+    if (el.children.length === 0) {
+      el.innerText = `${SITE_CONFIG.address.line1}, ${SITE_CONFIG.address.line2}, ${SITE_CONFIG.address.city}`;
+    }
   });
 
   document.querySelectorAll("[data-config-maps-link]").forEach(el => {
