@@ -46,29 +46,38 @@ const SITE_CONFIG = {
 function injectConfigData() {
   // Injects values like phone numbers, emails, addresses into marked elements to ensure single-source-of-truth updates.
   document.querySelectorAll("[data-config-phone]").forEach(el => {
-    if (el.children.length === 0) {
-      el.innerText = SITE_CONFIG.primaryPhoneDisplay;
+    const textTarget = el.querySelector("[data-phone-text]");
+    if (textTarget) {
+      textTarget.textContent = SITE_CONFIG.primaryPhoneDisplay;
+    } else if (el.childElementCount === 0) {
+      el.textContent = SITE_CONFIG.primaryPhoneDisplay;
     }
     if (el.tagName === "A") el.href = `tel:${SITE_CONFIG.primaryPhoneLink}`;
   });
 
   document.querySelectorAll("[data-config-dental-phone]").forEach(el => {
-    if (el.children.length === 0) {
-      el.innerText = SITE_CONFIG.dentalPhoneDisplay;
+    const textTarget = el.querySelector("[data-phone-text]");
+    if (textTarget) {
+      textTarget.textContent = SITE_CONFIG.dentalPhoneDisplay;
+    } else if (el.childElementCount === 0) {
+      el.textContent = SITE_CONFIG.dentalPhoneDisplay;
     }
     if (el.tagName === "A") el.href = `tel:${SITE_CONFIG.dentalPhoneLink}`;
   });
 
   document.querySelectorAll("[data-config-email]").forEach(el => {
-    if (el.children.length === 0) {
-      el.innerText = SITE_CONFIG.email;
+    const textTarget = el.querySelector("[data-email-text]");
+    if (textTarget) {
+      textTarget.textContent = SITE_CONFIG.email;
+    } else if (el.childElementCount === 0) {
+      el.textContent = SITE_CONFIG.email;
     }
     if (el.tagName === "A") el.href = `mailto:${SITE_CONFIG.email}`;
   });
 
   document.querySelectorAll("[data-config-address]").forEach(el => {
-    if (el.children.length === 0) {
-      el.innerText = `${SITE_CONFIG.address.line1}, ${SITE_CONFIG.address.line2}, ${SITE_CONFIG.address.city}`;
+    if (el.childElementCount === 0) {
+      el.textContent = `${SITE_CONFIG.address.line1}, ${SITE_CONFIG.address.line2}, ${SITE_CONFIG.address.city}`;
     }
   });
 
@@ -79,7 +88,7 @@ function injectConfigData() {
   // Inject current year in footer copyright
   const footerYear = document.getElementById("footer-year");
   if (footerYear) {
-    footerYear.innerText = new Date().getFullYear();
+    footerYear.textContent = new Date().getFullYear();
   }
 }
 
@@ -163,7 +172,7 @@ function initScrollHandler() {
 
 // 5. ANIMATIONS SYSTEM (Intersection Observer)
 function initRevealAnimations() {
-  const revealElements = document.querySelectorAll(".reveal");
+  const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-scale");
   if (revealElements.length === 0) return;
 
   // Respect user preference for reduced motion
@@ -181,8 +190,8 @@ function initRevealAnimations() {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
@@ -225,6 +234,11 @@ function initMobileNavigation() {
   });
 
   backdrop.addEventListener("click", closeMenu);
+
+  // Close when navigating via drawer links
+  navDrawer.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => closeMenu());
+  });
 
   // Close on ESC
   document.addEventListener("keydown", (e) => {
@@ -531,35 +545,91 @@ function initGalleryLightbox() {
 
 // 11. GENERAL SEARCH & TAB FILTERS (Services, Gallery, Testimonials)
 function initTabFilters() {
-  const tabs = document.querySelectorAll(".filter-tab");
+  const tabs = document.querySelectorAll(".filter-tab[data-filter]");
   if (tabs.length === 0) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const filterTokens = new WeakMap();
+
+  const applyFilter = (grid, targetCategory) => {
+    const items = grid.querySelectorAll("[data-category]");
+    const token = (filterTokens.get(grid) || 0) + 1;
+    filterTokens.set(grid, token);
+
+    items.forEach((item, index) => {
+      const itemCategories = (item.getAttribute("data-category") || "").split(" ");
+      const matches = targetCategory === "all" || itemCategories.includes(targetCategory);
+
+      item.classList.add("filter-item");
+
+      if (matches) {
+        item.classList.remove("is-hidden");
+        if (prefersReduced) {
+          item.classList.remove("is-hiding");
+          item.style.display = "";
+          return;
+        }
+        item.classList.add("is-hiding");
+        item.style.display = "";
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            if (filterTokens.get(grid) !== token) return;
+            item.classList.remove("is-hiding");
+          }, Math.min(index * 35, 280));
+        });
+      } else {
+        if (prefersReduced) {
+          item.style.display = "none";
+          item.classList.add("is-hidden");
+          return;
+        }
+        item.classList.add("is-hiding");
+        setTimeout(() => {
+          if (filterTokens.get(grid) !== token) return;
+          if (item.classList.contains("is-hiding")) {
+            item.classList.add("is-hidden");
+            item.style.display = "none";
+          }
+        }, 220);
+      }
+    });
+
+    // Update current gallery items list if filtering gallery page
+    if (grid.id === "gallery-items-grid") {
+      currentGalleryItems = Array.from(grid.querySelectorAll(".gallery-item")).filter(el => {
+        return el.style.display !== "none" && !el.classList.contains("is-hidden");
+      });
+    }
+  };
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       const targetCategory = tab.getAttribute("data-filter");
-      const siblings = tab.parentElement.querySelectorAll(".filter-tab");
-      siblings.forEach(s => s.classList.remove("active"));
+      const siblings = tab.parentElement.querySelectorAll(".filter-tab[data-filter]");
+      siblings.forEach(s => {
+        s.classList.remove("active");
+        s.setAttribute("aria-selected", "false");
+      });
       tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
 
-      // Filtering target grid elements
+      // Smooth scroll active tab into view on mobile
+      tab.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", inline: "center", block: "nearest" });
+
       const gridId = tab.parentElement.getAttribute("data-filter-grid");
       const grid = document.getElementById(gridId);
       if (!grid) return;
 
-      const items = grid.querySelectorAll("[data-category]");
-      items.forEach(item => {
-        const itemCategories = item.getAttribute("data-category").split(" ");
-        if (targetCategory === "all" || itemCategories.includes(targetCategory)) {
-          item.style.display = "";
-        } else {
-          item.style.display = "none";
-        }
-      });
+      applyFilter(grid, targetCategory);
+    });
+  });
 
-      // Update current gallery items list if filtering gallery page
-      if (gridId === "gallery-items-grid") {
-        currentGalleryItems = Array.from(grid.querySelectorAll(".gallery-item")).filter(el => el.style.display !== "none");
-      }
+  // Ensure tabs are keyboard accessible role
+  document.querySelectorAll(".filter-tabs[data-filter-grid]").forEach(nav => {
+    nav.setAttribute("role", "tablist");
+    nav.querySelectorAll(".filter-tab[data-filter]").forEach(tab => {
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-selected", tab.classList.contains("active") ? "true" : "false");
     });
   });
 }

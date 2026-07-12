@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#075E9B">
   <title>Privacy Policy - Kify Hospital</title>
   <meta name="description" content="Privacy Policy for Kify Hospital Rajahmundry. Read how we protect patient records, data collection, and privacy guidelines.">
   
@@ -24,7 +25,7 @@
     <div class="container top-bar-inner">
       <div class="top-bar-status">
         <span class="status-dot pulse"></span>
-        <span>Open 24 Hours • Emergency Care Available</span>
+        <span class="status-text-full">Open 24 Hours • Emergency Care Available</span><span class="status-text-short">Open 24 Hours</span>
       </div>
       <div class="top-bar-contact">
         <a href="tel:+918500023456" data-config-phone>85000 23456</a>
@@ -137,26 +138,34 @@
   </main>
 
   <!-- Mobile Fixed Action Bar -->
-  <div class="mobile-action-bar">
-    <a href="tel:+918500023456" class="mobile-action-item" data-config-phone>
-      <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2a.97.97 0 0 0 .24-1.01 11.28 11.28 0 0 1-.56-3.53c0-.55-.45-1-1-1H4.03c-.55 0-1 .45-1 1C3.03 14.07 9.93 21 18.97 21c.55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/></svg>
-      Call
+  <nav class="mobile-action-bar" aria-label="Quick actions">
+    <a href="tel:+918500023456" class="mobile-action-item action-call" data-config-phone aria-label="Call hospital">
+      <span class="mab-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2a.97.97 0 0 0 .24-1.01 11.28 11.28 0 0 1-.56-3.53c0-.55-.45-1-1-1H4.03c-.55 0-1 .45-1 1C3.03 14.07 9.93 21 18.97 21c.55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/></svg>
+      </span>
+      <span class="mab-label">Call</span>
     </a>
-    <a href="https://wa.me/918500023456" class="mobile-action-item" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 1.66c2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.4 5.84c0 4.52-3.68 8.2-8.22 8.2-1.45 0-2.88-.38-4.13-1.11l-.3-.18-3.07.81.82-3-2-.32a8.17 8.17 0 0 1-1.14-4.19c0-4.52 3.68-8.2 8.22-8.2z"/></svg>
-      WhatsApp
+    <a href="https://wa.me/918500023456" class="mobile-action-item action-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <span class="mab-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 1.66c2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.4 5.84c0 4.52-3.68 8.2-8.22 8.2-1.45 0-2.88-.38-4.13-1.11l-.3-.18-3.07.81.82-3-2-.32a8.17 8.17 0 0 1-1.14-4.19c0-4.52 3.68-8.2 8.22-8.2z"/></svg>
+      </span>
+      <span class="mab-label">WhatsApp</span>
     </a>
-    <a href="#" class="mobile-action-item" data-config-maps-link target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1L9 3L3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1l5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
-      Directions
+    <a href="#" class="mobile-action-item action-directions" data-config-maps-link target="_blank" rel="noopener noreferrer" aria-label="Get directions">
+      <span class="mab-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3l-.16.03L15 5.1L9 3L3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1l5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+      </span>
+      <span class="mab-label">Directions</span>
     </a>
-    <button class="mobile-action-item" data-open-modal>
-      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-      Book
+    <button type="button" class="mobile-action-item action-book" data-open-modal aria-label="Book appointment">
+      <span class="mab-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+      </span>
+      <span class="mab-label">Book</span>
     </button>
-  </div>
+  </nav>
 
-  <!-- Back to Top -->
+<!-- Back to Top -->
   <button class="back-to-top" aria-label="Scroll back to top">
     <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
   </button>
