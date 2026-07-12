@@ -1,0 +1,22 @@
+{
+  "name": "Kify Hospital",
+  "short_name": "Kify",
+  "description": "Premium patient-centered healthcare services, physician consultation, pediatrics, and dental care in Rajahmundry.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#075E9B",
+  "icons": [
+    {
+      "src": "./assets/icons/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

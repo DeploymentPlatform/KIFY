@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &amp; Specialties - Kify Hospital</title>
+  <meta name="description" content="Search and browse our medical specialties in Rajahmundry. Fevers, Diabetes, Pediatrics, Dental Clinic, Hypertension, Emergency and Palliative Care.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Favicons -->
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-status">
+        <span class="status-dot pulse"></span>
+        <span>Open 24 Hours • Emergency Care Available</span>
+      </div>
+      <div class="top-bar-contact">
+        <a href="tel:+918500023456" data-config-phone>85000 23456</a>
+        <a href="mailto:kify@kifyhospital.com" data-config-email>kify@kifyhospital.com</a>
+        <a href="#" data-config-maps-link target="_blank" rel="noopener noreferrer">Get Directions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container" aria-label="Kify Hospital Home">
+        <img src="assets/icons/favicon.svg" alt="Kify Hospital Logo" class="dynamic-logo">
+      </a>
+      
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+          <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="dental-clinic.html" class="nav-link">Dental Clinic</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary" data-open-modal>Book Appointment</button>
+      </div>
+
+      <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <div class="mobile-nav" id="mobile-nav-drawer" tabindex="-1" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-menu-list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+      <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+      <li><a href="services.html" class="nav-link active">Services</a></li>
+      <li><a href="dental-clinic.html" class="nav-link">Dental Clinic</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="mt-md"><button class="btn btn-primary" style="width: 100%" data-open-modal>Book Appointment</button></li>
+    </ul>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- Inner Hero -->
+    <section class="inner-hero" aria-label="Page Introduction">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Services</li>
+        </ul>
+        <h1 class="inner-hero-title">Services &amp; Specialties</h1>
+        <p class="lead">Search and filter our clinical services database. Tap any card to request diagnostics or scheduling.</p>
+      </div>
+    </section>
+
+    <!-- Filter & Search Utilities -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="search-filter-bar reveal">
+          <div class="search-input-wrapper mb-md">
+            <span class="search-icon">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </span>
+            <input type="text" id="services-search" class="search-input" placeholder="Type to search services (e.g. fever, diabetes, root canal)..." aria-label="Search services">
+          </div>
+
+          <nav class="filter-tabs" aria-label="Services Category Filters" data-filter-grid="services-directory-grid">
+            <button class="filter-tab active" data-filter="all">All Specialties</button>
+            <button class="filter-tab" data-filter="general">General Medicine</button>
+            <button class="filter-tab" data-filter="diabetes">Diabetes &amp; Endocrine</button>
+            <button class="filter-tab" data-filter="children">Children</button>
+            <button class="filter-tab" data-filter="dental">Dental</button>
+            <button class="filter-tab" data-filter="heart">Heart &amp; Lungs</button>
+            <button class="filter-tab" data-filter="kidney">Brain &amp; Kidney</button>
+            <button class="filter-tab" data-filter="emergency">Emergency</button>
+            <button class="filter-tab" data-filter="support">Supportive Care</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid Directory -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3" id="services-directory-grid">
+          
+          <!-- Card 1: Fevers and Infectious Diseases -->
+          <div class="service-card" id="fevers" data-category="general emergency">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.07 19.58 10.48 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg></div>
+            <h3 class="service-card-title">Fevers &amp; Infectious Diseases</h3>
+            <p class="service-card-desc">Diagnostic screening and therapeutic care for viral fevers, malaria, typhoid, tuberculosis, and regional Scrub Typhus.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 2: Diabetes Care -->
+          <div class="service-card" id="diabetes" data-category="diabetes">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+            <h3 class="service-card-title">Diabetes Care</h3>
+            <p class="service-card-desc">Continuous glucose management, neuropathy screenings, insulin dosage titration, and dietary management guidelines.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 3: Hypertension -->
+          <div class="service-card" id="hypertension" data-category="general heart">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+            <h3 class="service-card-title">Hypertension</h3>
+            <p class="service-card-desc">Clinical blood pressure regulation, lipid profile screenings, cardiovascular risk assessments, and stroke preventative guidelines.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 4: Pediatric Care -->
+          <div class="service-card" id="pediatrics" data-category="children">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v3c0 1.1.9 2 2 2s2-.9 2-2V4c0-1.1-.9-2-2-2zm0 10c-3.87 0-7 3.13-7 7v3h14v-3c0-3.87-3.13-7-7-7z"/></svg></div>
+            <h3 class="service-card-title">Pediatric Care</h3>
+            <p class="service-card-desc">Comprehensive medical checkups for infants and toddlers, immunization panels, developmental monitoring, and parent training support.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Pediatrics & Child Care">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 5: Endocrinology -->
+          <div class="service-card" id="endocrinology" data-category="diabetes">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/></svg></div>
+            <h3 class="service-card-title">Endocrinology</h3>
+            <p class="service-card-desc">Assessment and therapy of metabolic syndromes, adrenal secretions, hormonal variances, and related endocrine anomalies.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 6: Thyroid Care -->
+          <div class="service-card" id="thyroid" data-category="diabetes">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Thyroid Care</h3>
+            <p class="service-card-desc">Diagnosis and clinical management of Hypothyroidism, Hyperthyroidism, goiters, and related auto-immune thyroid disorders.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 7: Blood Disorders -->
+          <div class="service-card" id="blood" data-category="general">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+            <h3 class="service-card-title">Blood Disorders</h3>
+            <p class="service-card-desc">Management guidelines for chronic anemias, platelet counts, bleeding issues, and peripheral blood report diagnostics.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 8: Joint Pain & Rheumatology -->
+          <div class="service-card" id="rheumatology" data-category="general">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Joint Pain &amp; Rheumatology</h3>
+            <p class="service-card-desc">Non-surgical management of Rheumatoid Arthritis, Osteoarthritis, gout, chronic skeletal stiffness, and pain panels.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 9: Heart Diseases -->
+          <div class="service-card" id="heart-diseases" data-category="heart">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+            <h3 class="service-card-title">Heart Diseases</h3>
+            <p class="service-card-desc">Proactive screening of coronary arteries, managing hypertension effects, lipid panel analyses, and heart wellness checkups.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 10: Lung Diseases -->
+          <div class="service-card" id="lung" data-category="heart">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M19.36 10.04L20.5 9l-1.14-1.04c-3.1-2.82-7.23-4.48-11.54-4.7L6.8 5.3C9.9 5.5 12.8 6.7 15 8.7L13.5 10c-1.8-1.5-4.1-2.4-6.5-2.5L6 9.6c1.8.1 3.5.8 4.9 1.9L9.4 13C8.4 12.2 7.2 11.7 6 11.6v2.2c.6 0 1.2.3 1.7.7l-2 2H3.7v1.8h1.8L9 14.8c1.3.9 3 1.4 4.8 1.4 4.3 0 8-3.7 8-8v-.2c-.8.8-1.7 1.5-2.6 2z"/></svg></div>
+            <h3 class="service-card-title">Lung Diseases</h3>
+            <p class="service-card-desc">Therapeutic clinical paths for bronchial asthma, COPD, chronic bronchitis, allergy management, and pulmonary diagnostics.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 11: Gastrointestinal Diseases -->
+          <div class="service-card" id="gastro" data-category="general">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Gastrointestinal Diseases</h3>
+            <p class="service-card-desc">Management guidelines for chronic acid reflux (GERD), gastric ulcers, liver profiles, irritable bowel syndrome, and digestive care.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 12: Brain & Nervous System -->
+          <div class="service-card" id="brain" data-category="kidney">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Brain &amp; Nervous System Conditions</h3>
+            <p class="service-card-desc">Care plans for migraines, neuropathies, chronic nerve pain, coordination tracking, and age-related neurological monitoring.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 13: Kidney Care -->
+          <div class="service-card" id="kidney" data-category="kidney">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Kidney Care</h3>
+            <p class="service-card-desc">Screenings for diabetic nephropathy, chronic kidney disease monitoring, urine chemistry checks, and renal wellness diets.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 14: Poisoning Care -->
+          <div class="service-card" id="poisoning" data-category="emergency">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Poisoning Care</h3>
+            <p class="service-card-desc">Immediate clinical emergency protocols, toxicology diagnostics, supportive critical therapy, and antidotal services.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 15: Emergency Services -->
+          <div class="service-card" id="emergency" data-category="emergency">
+            <div class="service-card-icon" style="background-color: var(--color-emergency-light); color: var(--color-emergency);"><svg viewBox="0 0 24 24"><path d="M19 10.5h-5.5V5h-3v5.5H5v3h5.5V19h3v-5.5H19v-3z"/></svg></div>
+            <h3 class="service-card-title">Emergency Services</h3>
+            <p class="service-card-desc">24/7 emergency unit for trauma support, acute pediatric fevers, cardiac stabilization, and urgent diagnostics.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-emergency" data-config-phone>Call 24/7</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 16: Palliative Care -->
+          <div class="service-card" id="palliative" data-category="support">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+            <h3 class="service-card-title">Palliative Care</h3>
+            <p class="service-card-desc">Symptomatic support, pain-relief management plans, counseling, and comforting clinical care for chronic terminally-ill patients.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 17: Geriatric Care -->
+          <div class="service-card" id="geriatric" data-category="support">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Geriatric Care</h3>
+            <p class="service-card-desc">Physician assessments tailored for senior citizens. Multi-medication coordination, mobility checks, and cognitive monitoring.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 18: Critical Care -->
+          <div class="service-card" id="critical" data-category="emergency">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg></div>
+            <h3 class="service-card-title">Critical Care</h3>
+            <p class="service-card-desc">Continuous clinical tracking of life-threatening respiratory or multi-organ issues in our intensive therapy areas.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 19: Internal Medicine -->
+          <div class="service-card" id="internal-med" data-category="general">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Internal Medicine</h3>
+            <p class="service-card-desc">Thorough diagnostic investigations of multi-system clinical illnesses under Dr. Subrahmanyam's personal consultation.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 20: Family Medicine -->
+          <div class="service-card" id="family-med" data-category="general">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Family Medicine</h3>
+            <p class="service-card-desc">Preventative physical screenings, flu vaccine administration, seasonal infection care, and primary healthcare for all age groups.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 21: General Health Checkups -->
+          <div class="service-card" id="checkups" data-category="general">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+            <h3 class="service-card-title">General Health Checkups</h3>
+            <p class="service-card-desc">Executive profiling covering blood counts, liver chemistry, renal parameters, diabetic screening, and urine analysis reports.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 22: Diabetes Executive Checkup -->
+          <div class="service-card" id="diabetes-checkup" data-category="diabetes">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+            <h3 class="service-card-title">Diabetes Executive Checkup</h3>
+            <p class="service-card-desc">Dedicated diabetic profiling including HbA1c tests, diabetic kidney screens, diabetic eye consult panels, and neuropathy checks.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 23: Obesity & Weight Management -->
+          <div class="service-card" id="obesity" data-category="diabetes">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Obesity &amp; Weight Management</h3>
+            <p class="service-card-desc">Metabolic screening, lifestyle correction counseling, thyroid regulation, and clinician-monitored dietary plans.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 24: HIV Care -->
+          <div class="service-card" id="hiv" data-category="support">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">HIV Care</h3>
+            <p class="service-card-desc">Confidential anti-retroviral guidance, chronic viral load screening, safety counseling, and immune diagnostic checks.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="Physician & Diabetologist">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 25: Nursing Care -->
+          <div class="service-card" id="nursing" data-category="support">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Nursing Care</h3>
+            <p class="service-card-desc">Professional in-hospital nursing services, IV fluids control, diagnostic sample extractions, and wound care management.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 26: Cancer Support -->
+          <div class="service-card" id="cancer-support" data-category="support">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Cancer Support &amp; Palliative Care</h3>
+            <p class="service-card-desc">Clinical symptom management during therapies, pain medication monitoring, and nutritional advice for oncology patients.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500023456" class="btn btn-secondary" data-config-phone>Call</a>
+              <button class="btn btn-primary" data-open-modal data-department="General Health Consultation">Book</button>
+            </div>
+          </div>
+
+          <!-- Card 27: Dental Services -->
+          <div class="service-card" id="dental" data-category="dental">
+            <div class="service-card-icon" style="background-color: var(--color-teal-light); color: var(--color-teal);"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+            <h3 class="service-card-title">Dental Services</h3>
+            <p class="service-card-desc">Advanced general dentistry, plaque scaling, teeth whitening, cosmetic dental crowns, and pediatric dental checks.</p>
+            <div class="service-card-actions">
+              <a href="tel:+918500345678" class="btn btn-secondary" data-config-dental-phone>Call Dental</a>
+              <a href="dental-clinic.html" class="btn btn-primary">Explore Clinic</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Fixed Action Bar -->
+  <div class="mobile-action-bar">
+    <a href="tel:+918500023456" class="mobile-action-item" data-config-phone>
+      <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2a.97.97 0 0 0 .24-1.01 11.28 11.28 0 0 1-.56-3.53c0-.55-.45-1-1-1H4.03c-.55 0-1 .45-1 1C3.03 14.07 9.93 21 18.97 21c.55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/></svg>
+      Call
+    </a>
+    <a href="https://wa.me/918500023456" class="mobile-action-item" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 1.66c2.2 0 4.27.86 5.82 2.41a8.17 8.17 0 0 1 2.4 5.84c0 4.52-3.68 8.2-8.22 8.2-1.45 0-2.88-.38-4.13-1.11l-.3-.18-3.07.81.82-3-2-.32a8.17 8.17 0 0 1-1.14-4.19c0-4.52 3.68-8.2 8.22-8.2z"/></svg>
+      WhatsApp
+    </a>
+    <a href="#" class="mobile-action-item" data-config-maps-link target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1L9 3L3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1l5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+      Directions
+    </a>
+    <button class="mobile-action-item" data-open-modal>
+      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+      Book
+    </button>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-col-desc">
+        <a href="index.html" class="footer-logo" aria-label="Kify Hospital Home">
+          <img src="assets/icons/favicon.svg" alt="Kify Hospital Logo" class="dynamic-logo">
+        </a>
+        <p>Providing premium, patient-centric healthcare services in Rajahmundry. Dedicated internal medicine, child care, and dental expertise.</p>
+        <p><strong>Open 24 Hours / 365 Days</strong></p>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="services.html">Services &amp; Specialties</a></li>
+          <li><a href="dental-clinic.html">Dental Clinic</a></li>
+          <li><a href="gallery.html">Hospital Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="blog.html">Health Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Core Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#physician">Internal Medicine</a></li>
+          <li><a href="services.html#diabetes">Diabetes &amp; Hypertension</a></li>
+          <li><a href="services.html#pediatrics">Pediatric Care</a></li>
+          <li><a href="dental-clinic.html">General &amp; Cosmetic Dentistry</a></li>
+          <li><a href="services.html#emergency">Emergency Support</a></li>
+          <li><a href="services.html#checkups">Executive Health Checkups</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact Details</h3>
+        <p class="footer-contact-item">
+          <span class="footer-contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </span>
+          <span class="footer-contact-text" data-config-address>
+            Kify Hospital, Rajahmundry, Andhra Pradesh, India
+          </span>
+        </p>
+        <p class="footer-contact-item">
+          <span class="footer-contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2a.97.97 0 0 0 .24-1.01 11.28 11.28 0 0 1-.56-3.53c0-.55-.45-1-1-1H4.03c-.55 0-1 .45-1 1C3.03 14.07 9.93 21 18.97 21c.55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/></svg>
+          </span>
+          <span class="footer-contact-text">
+            Hospital: <a href="tel:+918500023456" data-config-phone>85000 23456</a><br>
+            Dental: <a href="tel:+918500345678" data-config-dental-phone>8500 345 678</a>
+          </span>
+        </p>
+        <p class="footer-contact-item">
+          <span class="footer-contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </span>
+          <span class="footer-contact-text">
+            Email: <a href="mailto:kify@kifyhospital.com" data-config-email>kify@kifyhospital.com</a>
+          </span>
+        </p>
+        <div class="footer-social-row">
+          <a href="#" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09v1.66c0 .6-.03 1.29-.1 2.09-.06.8-.15 1.43-.28 1.9a2.5 2.5 0 0 1-1.73 1.77c-.46.14-1.14.22-2.05.28-.9.06-1.73.1-2.48.1h-5.06c-.75 0-1.58-.04-2.48-.1-.91-.06-1.59-.14-2.05-.28a2.5 2.5 0 0 1-1.73-1.77c-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09v-1.66c0-.6.03-1.29.1-2.09.06-.8.15-1.43.28-1.9a2.5 2.5 0 0 1 1.73-1.77c.46-.14 1.14-.22 2.05-.28.9-.06 1.73-.1 2.48-.1h5.06c.75 0 1.58.04 2.48.1.91.06 1.59.14 2.05.28a2.5 2.5 0 0 1 1.73 1.77z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="footer-year"></span> Kify Hospital. All Rights Reserved. Near Nune Ganuga, Rajahmundry.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="medical-disclaimer.html">Medical Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Modal -->
+  <div class="modal-backdrop" id="modal-backdrop-el" role="dialog" aria-modal="true" aria-labelledby="modal-title-id">
+    <div class="modal-dialog" id="appointment-modal" tabindex="-1">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title-id">Request Appointment</h2>
+        <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-emergency-warning">
+          <div class="modal-emergency-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>
+          </div>
+          <div class="modal-emergency-text">
+            <strong>Emergency Case?</strong> Please do not wait for an online appointment. Call emergency services directly at <a href="tel:+918500023456" class="action-emergency"><strong>85000 23456</strong></a>.
+          </div>
+        </div>
+        <form id="modal-appointment-form" action="#" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="modal-name">Patient Full Name <span style="color:var(--color-emergency)">*</span></label>
+            <input type="text" id="modal-name" class="form-control" placeholder="Dr./Mr./Mrs. Patient Name" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="modal-phone">Phone Number <span style="color:var(--color-emergency)">*</span></label>
+              <input type="tel" id="modal-phone" class="form-control" placeholder="10-digit mobile number" required pattern="[0-9]{10,12}">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="modal-dept">Department <span style="color:var(--color-emergency)">*</span></label>
+              <select id="modal-dept" class="form-control" required>
+                <option value="" disabled selected>Select Department</option>
+                <option value="Physician & Diabetologist">Physician & Diabetologist (Dr. Subrahmanyam)</option>
+                <option value="Pediatrics & Child Care">Pediatrics & Child Care (Dr. Tejaswi)</option>
+                <option value="Dental Clinic">Kify Dental Clinic</option>
+                <option value="General Health Consultation">General Health Consultation</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="modal-date">Preferred Date <span style="color:var(--color-emergency)">*</span></label>
+              <input type="date" id="modal-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="modal-time">Preferred Time Range</label>
+              <select id="modal-time" class="form-control">
+                <option value="" selected>Any Time</option>
+                <option value="Morning (09:00 AM - 01:00 PM)">Morning (09:00 AM - 01:00 PM)</option>
+                <option value="Afternoon (01:00 PM - 04:00 PM)">Afternoon (01:00 PM - 04:00 PM)</option>
+                <option value="Evening (04:00 PM - 08:30 PM)">Evening (04:00 PM - 08:30 PM)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-message">Short Message (Optional)</label>
+            <textarea id="modal-message" class="form-control" rows="2" placeholder="Describe symptoms or reasons for visit..."></textarea>
+          </div>
+          <div class="form-consent mb-md">
+            <input type="checkbox" id="modal-consent" required checked>
+            <label for="modal-consent">I agree to send my request via WhatsApp. Sending this request does not confirm the appointment. The hospital team will contact me to confirm.</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">
+            Submit Appointment Request
+            <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

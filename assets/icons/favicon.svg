@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075E9B" />
+      <stop offset="100%" stop-color="#063B63" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B8F91" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#075E9B" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="240" fill="url(#tealGrad)" stroke="#075E9B" stroke-width="12" />
+  <path d="M 216 110 L 296 110 L 296 216 L 402 216 L 402 296 L 296 296 L 296 402 L 216 402 L 216 296 L 110 296 L 110 216 L 216 216 Z" fill="#C62828" />
+  <circle cx="256" cy="256" r="64" fill="#FFFFFF" />
+  <text x="256" y="278" font-family="'Manrope', 'Plus Jakarta Sans', sans-serif" font-size="64" font-weight="900" fill="url(#blueGrad)" text-anchor="middle">K</text>
+</svg>

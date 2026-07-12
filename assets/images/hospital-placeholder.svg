@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#EAF5FC" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+    <linearGradient id="facadeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0F4F8" />
+      <stop offset="100%" stop-color="#D9E7EF" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075E9B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0B8F91" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="800" height="600" fill="url(#skyGrad)" rx="16" />
+  
+  <!-- Clouds -->
+  <path d="M50,150 Q70,130 90,150 Q110,130 130,150 T170,150 Q170,170 130,170 L90,170 L50,170 Z" fill="#FFFFFF" opacity="0.6" />
+  <path d="M630,110 Q650,90 670,110 Q690,90 710,110 T750,110 Q750,130 710,130 L670,130 L630,130 Z" fill="#FFFFFF" opacity="0.6" />
+  
+  <!-- Hospital Building facade -->
+  <g transform="translate(100, 200)">
+    <!-- Ground & Trees in BG -->
+    <rect x="-50" y="320" width="700" height="40" fill="#277D57" rx="10" opacity="0.8" />
+    <circle cx="50" cy="300" r="30" fill="#277D57" opacity="0.7" />
+    <circle cx="550" cy="290" r="40" fill="#277D57" opacity="0.7" />
+    
+    <!-- Main Block -->
+    <rect x="50" y="80" width="500" height="240" fill="url(#facadeGrad)" rx="8" stroke="#BCCCDC" stroke-width="2" />
+    
+    <!-- Modern glass atrium -->
+    <rect x="230" y="40" width="140" height="280" fill="url(#glassGrad)" rx="4" />
+    <!-- Glass mullions -->
+    <line x1="300" y1="40" x2="300" y2="320" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" />
+    <line x1="230" y1="110" x2="370" y2="110" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" />
+    <line x1="230" y1="180" x2="370" y2="180" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" />
+    <line x1="230" y1="250" x2="370" y2="250" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" />
+    
+    <!-- Left Wing Windows -->
+    <rect x="80" y="110" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="140" y="110" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="80" y="180" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="140" y="180" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="80" y="250" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="140" y="250" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    
+    <!-- Right Wing Windows -->
+    <rect x="420" y="110" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="480" y="110" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="420" y="180" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="480" y="180" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="420" y="250" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    <rect x="480" y="250" width="40" height="40" fill="#FFFFFF" rx="4" stroke="#D9E7EF" stroke-width="2" />
+    
+    <!-- Red Emergency Cross above Glass atrium -->
+    <rect x="280" y="0" width="40" height="40" fill="#FFFFFF" rx="6" stroke="#D9E7EF" stroke-width="1" />
+    <path d="M295,8 L305,8 L305,15 L312,15 L312,25 L305,25 L305,32 L295,32 L295,25 L288,25 L288,15 L295,15 Z" fill="#C62828" />
+    
+    <!-- Entrance door -->
+    <path d="M270,320 L270,280 L330,280 L330,320 Z" fill="#102A43" />
+  </g>
+  
+  <text x="400" y="555" font-family="'Manrope', 'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#102A43" text-anchor="middle">Kify Hospital Campus</text>
+  <text x="400" y="578" font-family="'Inter', 'Source Sans 3', sans-serif" font-size="14" fill="#627D98" text-anchor="middle">Modern Healthcare Infrastructure in Rajahmundry</text>
+</svg>

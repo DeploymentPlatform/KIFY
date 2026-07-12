@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAF5FC" />
+      <stop offset="100%" stop-color="#D9E7EF" />
+    </linearGradient>
+    <linearGradient id="doctorCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F0F4F8" />
+    </linearGradient>
+    <linearGradient id="blueTie" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075E9B" />
+      <stop offset="100%" stop-color="#063B63" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="500" fill="url(#avatarGrad)" rx="16" />
+  
+  <!-- Stylized Doctor Avatar Graphic -->
+  <g transform="translate(200, 240)">
+    <!-- Head / Face -->
+    <circle cx="0" cy="-60" r="50" fill="#E2B295" />
+    <!-- Hair (Consultant Style) -->
+    <path d="M-52,-70 C-50,-115 50,-115 52,-70 C40,-85 -40,-85 -52,-70 Z" fill="#243B53" />
+    <!-- Glasses -->
+    <circle cx="-18" cy="-60" r="14" fill="none" stroke="#102A43" stroke-width="3" />
+    <circle cx="18" cy="-60" r="14" fill="none" stroke="#102A43" stroke-width="3" />
+    <line x1="-4" y1="-60" x2="4" y2="-60" stroke="#102A43" stroke-width="3" />
+    <!-- Stethoscope around neck -->
+    <path d="M-65,20 C-65,-10 -50,-20 -35,-20 M65,20 C65,-10 50,-20 35,-20" fill="none" stroke="#627D98" stroke-width="6" stroke-linecap="round" />
+    
+    <!-- Torso / White Coat -->
+    <path d="M-80,100 C-80,40 -60,10 60,10 C60,10 80,40 80,100 Z" fill="url(#doctorCoat)" stroke="#D9E7EF" stroke-width="2" />
+    <!-- Inner Shirt & Tie -->
+    <path d="M-25,10 L0,45 L25,10 Z" fill="#FFFFFF" />
+    <path d="M-8,15 L8,15 L12,45 L0,55 L-12,45 Z" fill="url(#blueTie)" />
+    <!-- Lapels -->
+    <path d="M-45,10 L-25,45 L-25,80" fill="none" stroke="#D9E7EF" stroke-width="3" />
+    <path d="M45,10 L25,45 L25,80" fill="none" stroke="#D9E7EF" stroke-width="3" />
+    
+    <!-- Stethoscope chest piece -->
+    <path d="M-30,40 C-30,70 0,80 0,80" fill="none" stroke="#334E68" stroke-width="4" />
+    <circle cx="0" cy="80" r="8" fill="#BCCCDC" stroke="#334E68" stroke-width="2" />
+  </g>
+  
+  <!-- Text Label -->
+  <rect x="20" y="420" width="360" height="60" fill="#FFFFFF" fill-opacity="0.9" rx="8" />
+  <text x="200" y="445" font-family="'Manrope', 'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#102A43" text-anchor="middle">Kify Specialist Profile</text>
+  <text x="200" y="465" font-family="'Inter', 'Source Sans 3', sans-serif" font-size="12" fill="#627D98" text-anchor="middle">Photo Placeholder (4:5 Aspect Ratio)</text>
+</svg>
